@@ -52,4 +52,5 @@ class ClassController
         $this->classController->deleteClass($id);
         header('location:index.php?page=list-class');
     }
+
 }
