@@ -1,4 +1,5 @@
 
+<a href="index.php?page=add-score&id=<?php echo $student['id']?>" >ADD SCORE</a>
 
 <table>
 

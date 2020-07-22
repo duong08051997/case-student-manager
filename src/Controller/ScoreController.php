@@ -26,4 +26,23 @@ class ScoreController
         $student = $this->studentManager->getStudentId($student_id);
         include("src/View/Score/list.php");
     }
+    public function addScore()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            $student_id = $_GET['id'];
+            $student = $this->studentManager->getStudentId($student_id);
+            include('src/View/Score/add.php');
+        } else {
+            $student_id = $_GET['id'];
+            $student = $this->studentManager->getStudentId($student_id);
+            $maths = $_REQUEST['maths'];
+            $physical = $_REQUEST['physical'];
+            $chemistry = $_REQUEST['chemistry'];
+            $english = $_REQUEST['english'];
+            $student_id = $student['id'];
+            $score = new Score($maths, $physical, $chemistry, $english, $student_id);
+            $this->scoreController->addScore($score);
+            header("location:index.php?page=list-score&student_id=$student_id");
+        }
+    }
 }

@@ -29,4 +29,16 @@ class ScoreManager
         }
         return $scores;
     }
+    public function addScore($score)
+    {
+        $sql = "INSERT INTO `tbl_score`(`maths`, `physical`, `chemistry`, `english`, `student_id`) 
+                VALUES (:maths, :physical, :chemistry, :english, :student_id)";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":maths", $score->getMaths());
+        $stmt->bindParam(":physical", $score->getPhysical());
+        $stmt->bindParam(":chemistry", $score->getChemistry());
+        $stmt->bindParam(":english", $score->getEnglish());
+        $stmt->bindParam(":student_id", $score->getStudentId());
+        $stmt->execute();
+    }
 }

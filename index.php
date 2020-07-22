@@ -52,6 +52,9 @@ switch ($page){
     case "list-score":
         $scoreController->getAllScore();
         break;
+    case "add-score":
+        $scoreController->addScore();
+        break;
     default:
         $classController->getAllClass();
 }
