@@ -38,6 +38,9 @@ switch ($page){
     case "add-student":
         $studentController->addStudent();
         break;
+    case "update-student":
+        $studentController->updateStudent();
+        break;
     default:
         $classController->getAllClass();
 }

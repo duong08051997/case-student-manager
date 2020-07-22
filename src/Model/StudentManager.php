@@ -40,5 +40,27 @@ class StudentManager
         $stmt->bindParam(":class_id", $student->getClassId());
         $stmt->execute();
     }
+    public function getStudentId($id)
+    {
+        $sql = "SELECT * FROM tbl_student WHERE id = :id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
+    public function updateStudent($student)
+    {
+        $sql = "UPDATE `tbl_student` SET `name`= :name,`age`= :age,`gender`= :gender,`address`= :address,`email`= :email ,`class_id`= :class_id WHERE `id` =:id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id", $student->getId());
+        $stmt->bindParam(":name", $student->getName());
+        $stmt->bindParam(":age", $student->getAge());
+        $stmt->bindParam(":gender", $student->getGender());
+        $stmt->bindParam(":address", $student->getAddress());
+        $stmt->bindParam(":email", $student->getEmail());
+        $stmt->bindParam(":class_id", $student->getClassId());
+        $stmt->execute();
+    }
 
 }

@@ -46,5 +46,27 @@ class StudentController
             header("location:index.php?page=list-student&class_id=$class_id");
         }
     }
+    public function updateStudent()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            $id = $_REQUEST['id'];
+            $student = $this->studentController->getStudentId($id);
+            include('src/View/Student/update.php');
+        } else {
+
+            $id = $_REQUEST['id'];
+            $name = $_REQUEST['name'];
+            $age = $_REQUEST['age'];
+            $gender = $_REQUEST['gender'];
+            $address = $_REQUEST['address'];
+            $email = $_REQUEST['email'];
+            $class_id = $_REQUEST['class_id'];
+
+            $student = new Student($name, $age, $gender, $address, $email, $class_id);
+            $student->setId($id);
+            $this->studentController->updateStudent($student);
+            header("location:index.php?page=list-student&class_id=$class_id");
+        }
+    }
 
 }
