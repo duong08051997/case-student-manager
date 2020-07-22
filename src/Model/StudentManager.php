@@ -62,5 +62,12 @@ class StudentManager
         $stmt->bindParam(":class_id", $student->getClassId());
         $stmt->execute();
     }
+    public function deleteStudent($id)
+    {
+        $sql = "DELETE FROM tbl_student WHERE id = :id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id",$id);
+        $stmt->execute();
+    }
 
 }

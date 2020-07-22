@@ -68,5 +68,13 @@ class StudentController
             header("location:index.php?page=list-student&class_id=$class_id");
         }
     }
+    public function deleteStudent()
+    {
+        $id = $_REQUEST['id'];
+        $this->studentController->deleteStudent($id);
+        header("location:index.php?page=list-student&class_id=$id");
+
+
+    }
 
 }
