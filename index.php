@@ -35,6 +35,9 @@ switch ($page){
     case "list-student":
         $studentController->getAllStudent();
         break;
+    case "add-student":
+        $studentController->addStudent();
+        break;
     default:
         $classController->getAllClass();
 }
