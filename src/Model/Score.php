@@ -116,6 +116,4 @@ class Score
     {
         $this->student_id = $student_id;
     }
-
-
 }

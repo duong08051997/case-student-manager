@@ -1,11 +1,13 @@
 <?php
 
 use Web\Controller\ClassController;
+use Web\Controller\ScoreController;
 use Web\Controller\StudentController;
 
 require __DIR__."/vendor/autoload.php";
 $classController = new ClassController();
 $studentController = new StudentController();
+$scoreController = new ScoreController();
 $page = isset($_REQUEST['page']) ? $_REQUEST['page']:"";
 ?>
 <!doctype html>
@@ -46,6 +48,9 @@ switch ($page){
         break;
     case "search-student":
         $studentController->searchStudent();
+        break;
+    case "list-score":
+        $scoreController->getAllScore();
         break;
     default:
         $classController->getAllClass();
