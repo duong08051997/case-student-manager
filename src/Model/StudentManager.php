@@ -13,7 +13,7 @@ class StudentManager
         $this->database = $db->connect();
     }
 
-    public function getAllStudent()
+    public function getAllStudent($class_id)
     {
         $sql = "SELECT * FROM tbl_student WHERE class_id =:id";
         $stmt = $this->database->prepare($sql);

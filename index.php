@@ -1,9 +1,11 @@
 <?php
 
 use Web\Controller\ClassController;
+use Web\Controller\StudentController;
 
 require __DIR__."/vendor/autoload.php";
 $classController = new ClassController();
+$studentController = new StudentController();
 $page = isset($_REQUEST['page']) ? $_REQUEST['page']:"";
 ?>
 <!doctype html>
@@ -29,6 +31,9 @@ switch ($page){
         break;
     case "delete-class":
         $classController->deleteClass();
+        break;
+    case "list-student":
+        $studentController->getAllStudent();
         break;
     default:
         $classController->getAllClass();
