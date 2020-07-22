@@ -1,6 +1,6 @@
 <?php
 namespace Web\Model;
-
+use PDO;
 class DBConnect
 {
     protected $dsn;
@@ -9,7 +9,7 @@ class DBConnect
 
     public function __construct()
     {
-        $this->dsn = 'mysql:host=localhost;dbname=case_student_manager;charset=utf8';
+        $this->dsn = 'mysql:host=localhost;dbname=case_module_2;charset=utf8';
         $this->username = "duong";
         $this->password = "Gaubeo@";
     }
