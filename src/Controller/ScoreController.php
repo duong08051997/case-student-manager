@@ -45,4 +45,27 @@ class ScoreController
             header("location:index.php?page=list-score&student_id=$student_id");
         }
     }
+    public function updateScore()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            $id = $_GET['id'];
+            $score = $this->scoreController->getScoreId($id);
+            include 'src/View/Score/update.php';
+        } else {
+            $id = $_REQUEST['id'];
+            $maths = $_REQUEST['maths'];
+            $physical = $_REQUEST['physical'];
+            $chemistry = $_REQUEST['chemistry'];
+            $english = $_REQUEST['english'];
+            $student_id = $_REQUEST['student_id'];
+            $score = new Score($maths, $physical, $chemistry, $english, $student_id);
+            $score->setId($id);
+            $this->scoreController->updateScore($score);
+            var_dump($score);
+            header("location:index.php?page=list-score&student_id=$student_id");
+
+        }
+
+
+    }
 }

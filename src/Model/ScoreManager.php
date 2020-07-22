@@ -41,4 +41,26 @@ class ScoreManager
         $stmt->bindParam(":student_id", $score->getStudentId());
         $stmt->execute();
     }
+    public function getScoreId($id)
+    {
+        $sql = "SELECT * FROM tbl_score WHERE id = :id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
+    public function updateScore($score)
+    {
+        $sql = "UPDATE `tbl_score` SET `maths`= :maths,`physical`= :physical,`chemistry`= :chemistry,`english`= :english,`student_id`= :student_id WHERE `id` = :id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id", $score->getId());
+        $stmt->bindParam(":maths", $score->getMaths());
+        $stmt->bindParam(":physical", $score->getPhysical());
+        $stmt->bindParam(":chemistry", $score->getChemistry());
+        $stmt->bindParam(":english", $score->getEnglish());
+        $stmt->bindParam(":student_id", $score->getStudentId());
+        $stmt->execute();
+    }
+
 }
