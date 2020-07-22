@@ -69,5 +69,19 @@ class StudentManager
         $stmt->bindParam(":id",$id);
         $stmt->execute();
     }
+    public function searchStudent($keyword)
+    {
+        $sql = "SELECT * FROM tbl_student WHERE name LIKE :keyword ";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindValue(':keyword', '%' . $keyword . '%');
+        $stmt->execute();
+        $data = $stmt->fetchAll();
+        $students = [];
+        foreach ($data as $item) {
+            $student = new Student($item['name'], $item['age'], $item['gender'], $item['address'], $item['email'], $item['class_id']);
+            array_push($students, $student);
+        }
+        return $students;
+    }
 
 }

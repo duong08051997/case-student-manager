@@ -72,9 +72,14 @@ class StudentController
     {
         $id = $_REQUEST['id'];
         $this->studentController->deleteStudent($id);
-        header("location:index.php?page=list-student&class_id=$id");
-
-
+        header("location:index.php?page=list-class");
+    }
+    function searchStudent(){
+        if ($_SERVER['REQUEST_METHOD']=='POST'){
+            $keyword = $_POST['keyword'];
+            $students = $this->studentController->searchStudent($keyword);
+            include_once 'src/View/Student/list.php';
+        }
     }
 
 }

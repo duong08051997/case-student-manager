@@ -44,6 +44,9 @@ switch ($page){
     case "delete-student":
         $studentController->deleteStudent();
         break;
+    case "search-student":
+        $studentController->searchStudent();
+        break;
     default:
         $classController->getAllClass();
 }
