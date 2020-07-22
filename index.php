@@ -58,6 +58,9 @@ switch ($page){
     case "update-score":
         $scoreController->updateScore();
         break;
+    case "delete-score":
+        $scoreController->deleteScore();
+        break;
     default:
         $classController->getAllClass();
 }

@@ -65,7 +65,11 @@ class ScoreController
             header("location:index.php?page=list-score&student_id=$student_id");
 
         }
-
-
+    }
+    public function deleteScore()
+    {
+        $id = $_REQUEST['id'];
+        $this->scoreController->deleteScore($id);
+        header("location:index.php?page=list-score&student_id=$id");
     }
 }

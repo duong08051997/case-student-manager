@@ -62,5 +62,12 @@ class ScoreManager
         $stmt->bindParam(":student_id", $score->getStudentId());
         $stmt->execute();
     }
+    public function deleteScore($id)
+    {
+        $sql = "DELETE FROM tbl_score WHERE id = :id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id",$id);
+        $stmt->execute();
+    }
 
 }
