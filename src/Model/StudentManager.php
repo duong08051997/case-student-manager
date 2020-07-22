@@ -27,7 +27,18 @@ class StudentManager
             array_push($students, $student);
         }
         return $students;
-
+    }
+    public function addStudent($student)
+    {
+        $sql = "INSERT INTO tbl_student( `name`, `age`, `gender`, `address`, `email`,`class_id`) VALUES (:name ,:age, :gender, :address, :email,:class_id)";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":name", $student->getName());
+        $stmt->bindParam(":age", $student->getAge());
+        $stmt->bindParam(":gender", $student->getGender());
+        $stmt->bindParam(":address", $student->getAddress());
+        $stmt->bindParam(":email", $student->getEmail());
+        $stmt->bindParam(":class_id", $student->getClassId());
+        $stmt->execute();
     }
 
 }
