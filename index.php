@@ -21,9 +21,11 @@ switch ($page){
     case "list-class":
         $classController->getAllClass();
         break;
+    case "add-class":
+        $classController->addClass();
+        break;
     default:
         $classController->getAllClass();
-
 }
 ?>
 

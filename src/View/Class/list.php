@@ -1,3 +1,6 @@
+
+<a href="index.php?page=add-class">ADD CLASS</a><br>
+
 <table>
     <tr>
         <th>STT</th>

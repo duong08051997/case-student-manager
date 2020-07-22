@@ -25,6 +25,13 @@ class ClassManager
             array_push($classes, $class);
         }
         return $classes;
-
+    }
+    public function addClass($class)
+    {
+        $sql = "INSERT INTO `tbl_class`( `name`, `status`) VALUES (:name, :status)";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":name",$class->getName());
+        $stmt->bindParam(":status",$class->getStatus());
+        $stmt->execute();
     }
 }
