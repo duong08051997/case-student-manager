@@ -30,5 +30,20 @@ class ClassController
             header('location:index.php?page=list-class');
         }
     }
-
+    public function updateClass()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            $id = $_REQUEST['id'];
+            $class = $this->classController->getClassId($id);
+            include('src/View/Class/update.php');
+        }else{
+            $id = $_REQUEST['id'];
+            $name = $_REQUEST['name'];
+            $status = $_REQUEST['status'];
+            $class = new ClassRoom($name,$status);
+            $class->setId($id);
+            $this->classController->updateClass($class);
+            header('location:index.php?page=list-class');
+        }
+    }
 }

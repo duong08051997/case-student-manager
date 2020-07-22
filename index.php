@@ -24,6 +24,9 @@ switch ($page){
     case "add-class":
         $classController->addClass();
         break;
+    case "update-class":
+        $classController->updateClass();
+        break;
     default:
         $classController->getAllClass();
 }

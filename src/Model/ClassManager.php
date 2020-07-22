@@ -34,4 +34,21 @@ class ClassManager
         $stmt->bindParam(":status",$class->getStatus());
         $stmt->execute();
     }
+    public function getClassId($id)
+    {
+        $sql = "SELECT * FROM tbl_class WHERE id = :id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id",$id);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    public function updateClass($class)
+    {
+        $sql = "UPDATE `tbl_class` SET `name` = :name, `status` = :status WHERE `id` = :id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id",$class->getId());
+        $stmt->bindParam(":name",$class->getName());
+        $stmt->bindParam(":status",$class->getStatus());
+        $stmt->execute();
+    }
 }
