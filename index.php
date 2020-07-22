@@ -27,6 +27,9 @@ switch ($page){
     case "update-class":
         $classController->updateClass();
         break;
+    case "delete-class":
+        $classController->deleteClass();
+        break;
     default:
         $classController->getAllClass();
 }

@@ -51,4 +51,11 @@ class ClassManager
         $stmt->bindParam(":status",$class->getStatus());
         $stmt->execute();
     }
+    public function deleteClass($id)
+    {
+        $sql = "DELETE FROM tbl_class WHERE id = :id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id",$id);
+        $stmt->execute();
+    }
 }

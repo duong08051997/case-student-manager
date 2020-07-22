@@ -46,4 +46,10 @@ class ClassController
             header('location:index.php?page=list-class');
         }
     }
+    public function deleteClass()
+    {
+        $id =$_REQUEST['id'];
+        $this->classController->deleteClass($id);
+        header('location:index.php?page=list-class');
+    }
 }
