@@ -83,5 +83,17 @@ class StudentManager
         }
         return $students;
     }
-
+    public function view()
+    {
+        $sql = "SELECT * FROM tbl_student ";
+        $stmt = $this->database->prepare($sql);
+        $stmt->execute();
+        $data = $stmt->fetchAll();
+        $students = [];
+        foreach ($data as $item) {
+            $student = new Student($item['name'], $item['age'], $item['gender'], $item['address'], $item['email'], $item['class_id']);
+            array_push($students, $student);
+        }
+        return $students;
+    }
 }

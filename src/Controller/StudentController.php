@@ -81,5 +81,10 @@ class StudentController
             include_once 'src/View/Student/list.php';
         }
     }
+    public function viewSearch()
+    {
+        $students=$this->studentController->view();
+        include('src/View/Student/search.php');
+    }
 
 }
