@@ -4,7 +4,7 @@
 <div class="conn">
 
 </div>
-<table class="table table-hover ">
+<table class="table table-hover " style="width: 120%">
     <thead class="table-dark text-center">
     <tr>
         <th>STT</th>
@@ -14,13 +14,7 @@
         <th>Address</th>
         <th>Email</th>
         <th style="text-align: center">Action</th>
-        <th>
-            <form class="form-inline my-2 my-lg-0" action="index.php?page=search-student" method="post">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                       name="keyword">
-
-            </form>
-        </th>
+        <th></th>
 
     </tr>
     </thead>

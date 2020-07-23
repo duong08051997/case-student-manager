@@ -1,6 +1,6 @@
 <a href="index.php?page=add-class" class="btn btn-success">ADD CLASS</a><br>
 <div class="pt-3"></div>
-<table class="table table-hover text-center">
+<table class="table table-hover text-center" style="width: 120%">
     <thead class="table-dark">
     <tr>
         <th>STT</th>
