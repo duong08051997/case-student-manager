@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 use Web\Controller\ClassController;
 use Web\Controller\ScoreController;
 use Web\Controller\StudentController;
@@ -32,7 +33,7 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : "";
     <div>
         <?php
         include('src/View/Menu/menu2.php');
-            ?>
+        ?>
     </div>
     <div class="pt-3">
         <?php
@@ -97,13 +98,13 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : "";
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y="
-        crossorigin="anonymous"/>
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y="
+      crossorigin="anonymous"/>
 
 <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
-        integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY="
-        crossorigin="anonymous"/>
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
+      integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY="
+      crossorigin="anonymous"/>
 
 </html>
